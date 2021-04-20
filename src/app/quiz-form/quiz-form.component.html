@@ -1,0 +1,19 @@
+<div class="container">
+  <form class="FormContainer" [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+    <label>Input Amount</label>
+    <input required type="number" formControlName="amount" placeholder="Enter Amount">
+    <label>Choose Category</label>
+    <select formControlName="category" >
+      <option *ngFor="let category of categories" [ngValue]="category.id"  >{{category.name}}</option>
+    </select>
+    <label>Choose Difficulty</label>
+    <select formControlName="difficulty">
+      <option *ngFor="let option of difficulties"  [ngValue]="option.value" >{{option.difficulty}}</option>
+    </select>
+    <label>Choose Type</label>
+    <select formControlName="type">
+      <option *ngFor="let option of types"  [ngValue]="option.value"  >{{option.type}}</option>
+    </select>
+    <button routerLink="/game" type="button">submit</button>
+  </form>
+</div>
