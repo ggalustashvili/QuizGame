@@ -3,7 +3,6 @@ import {DifficultiesModel} from '../../models/difficulties.model';
 import {TypesModel} from '../../models/types.model';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CategoriesModel} from '../../models/categories.model';
-import {QuestionsModel} from '../../models/questions.model';
 import {DataProviderService} from '../../services/data-provider.service';
 import {Router} from '@angular/router';
 
@@ -15,7 +14,6 @@ import {Router} from '@angular/router';
 export class QuizFormComponent implements OnInit {
   title = 'sweeft';
   categories: CategoriesModel[];
-  questions: Array<QuestionsModel>;
   difficulties: DifficultiesModel[] = [
     {difficulty: 'Any Difficulty', value: ''},
     {difficulty: 'Easy', value: 'easy'},
@@ -34,7 +32,6 @@ export class QuizFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
-    // Reactive Form
     this.gameForm = new FormGroup({
       amount: new FormControl(1),
       category: new FormControl(9),
