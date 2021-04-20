@@ -9,12 +9,13 @@ import {QuestionsrequestModel} from '../models/questionsrequest.model';
 })
 export class DataProviderService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   categories;
   fetchCategories(): Observable<ApiModel> {
      return  this.http.get<ApiModel>('https://opentdb.com/api_category.php');
   }
   fetchQuestions(data): Observable<QuestionsrequestModel>{
-    return this.http.get<QuestionsrequestModel>(`https://opentdb.com/api.php?amount=${data.amount}&category=${data.category}&difficulty=${data.difficulty}&type=${data.type}`);
+   return this.http.get<QuestionsrequestModel>(`https://opentdb.com/api.php?amount=${data.amount}&category=${data.category}&difficulty=${data.difficulty}&type=${data.type}`);
   }
-}
+  }
+

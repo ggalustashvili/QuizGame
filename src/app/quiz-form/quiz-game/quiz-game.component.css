@@ -1,0 +1,18 @@
+form{
+  border:1px solid black;
+  margin:2rem;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+.selector{
+  font-size:1.2rem;
+  color:red;
+  border-color:orangered;
+}
+h2{
+  font-family: Arial;
+}
+

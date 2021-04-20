@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { QuizGameComponent } from './quiz-form/quiz-game/quiz-game.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QuizFormComponent } from './quiz-form/quiz-form.component';
+import {DataProviderService} from '../services/data-provider.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { QuizFormComponent } from './quiz-form/quiz-form.component';
   imports: [
     BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule, AppRoutingModule
   ],
-  providers: [],
+  providers: [DataProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
