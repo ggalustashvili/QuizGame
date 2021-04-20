@@ -27,7 +27,7 @@ export class QuizFormComponent implements OnInit {
   ];
   gameForm: FormGroup;
 
-  constructor(private data: DataProviderService , private router: Router) {
+  constructor(private data: DataProviderService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -45,11 +45,13 @@ export class QuizFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.router.navigate(['game'] , { queryParams: {
-      difficulty : this.gameForm.value.difficulty,
-      amount : this.gameForm.value.amount,
-      category : this.gameForm.value.category,
-      type : this.gameForm.value.type
-    }});
+    this.router.navigate(['game'], {
+      queryParams: {
+        difficulty: this.gameForm.value.difficulty,
+        amount: this.gameForm.value.amount,
+        category: this.gameForm.value.category,
+        type: this.gameForm.value.type
+      }
+    });
   }
 }

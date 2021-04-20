@@ -1,9 +1,9 @@
 <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
-    <div *ngFor="let question of questions ; let i = index" class="container">
-      <h2>{{question.question}}</h2>
+  <div *ngFor="let question of questions ; let i = index" class="container">
+    <h2>{{question.question}}</h2>
     <select [formControlName]='i' id="select" class="selector">
       <option *ngFor="let item of question.incorrect_answers" [value]="item">{{item}}</option>
     </select>
-    </div>
+  </div>
   <button type="submit">Submit</button>
 </form>

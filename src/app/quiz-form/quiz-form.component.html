@@ -1,20 +1,21 @@
 <div class="container">
   <form class="FormContainer" [formGroup]="gameForm" (ngSubmit)="onSubmit()">
     <label for="number">Input Amount</label>
-    <input id="number" required type="number"  formControlName="amount" placeholder="Enter Amount" min="1" max="50">
-    <p class="redtext" *ngIf="gameForm.get('amount').value>50 || gameForm.get('amount').value<=0"> please Enter Number above 0 and below 51</p>
+    <input id="number" required type="number" formControlName="amount" placeholder="Enter Amount" min="1" max="50">
+    <p class="redtext" *ngIf="gameForm.get('amount').value>50 || gameForm.get('amount').value<=0"> please Enter Number
+      above 0 and below 51</p>
     <label for="category">Choose Category</label>
-    <select formControlName="category" id="category" >
-      <option *ngFor="let category of categories" [ngValue]="category.id"  >{{category.name}}</option>
+    <select formControlName="category" id="category">
+      <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
     </select>
     <label for="difficulty">Choose Difficulty</label>
     <select id="difficulty" formControlName="difficulty">
-      <option *ngFor="let option of difficulties"  [ngValue]="option.value" >{{option.difficulty}}</option>
+      <option *ngFor="let option of difficulties" [ngValue]="option.value">{{option.difficulty}}</option>
     </select>
     <label for="type">Choose Type</label>
     <select id="type" formControlName="type">
-      <option *ngFor="let option of types"  [ngValue]="option.value"  >{{option.type}}</option>
+      <option *ngFor="let option of types" [ngValue]="option.value">{{option.type}}</option>
     </select>
-    <button  type="submit" *ngIf="gameForm.get('amount').value<=50 && gameForm.get('amount').value>0">submit</button>
+    <button type="submit" *ngIf="gameForm.get('amount').value<=50 && gameForm.get('amount').value>0">submit</button>
   </form>
 </div>
